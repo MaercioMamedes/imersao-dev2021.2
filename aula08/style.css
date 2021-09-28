@@ -71,7 +71,7 @@ h2 {
 }
 
 .carta-status input {
-    margin: 20px 10px;
+    /*margin: 20px 10px;*/
 }
 
 .resultado-final {
@@ -115,5 +115,7 @@ form {
 }
 
 .carta-status p {
-    margin-bottom: 2rem;
+    margin-left: 5px;
+    text-align: left;
 }
+

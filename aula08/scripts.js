@@ -1,15 +1,13 @@
 
 function sortearCarta(){
     var btnSortear = document.getElementById("btnSortear");
+
     btnSortear.disabled=true;
 
     cartaJogador = listaCartas[parseInt(Math.random()*4)]
 
     exibirCartaJogador()
 
-   
-
-     
 }
 
 
@@ -23,8 +21,8 @@ function exibirCartaJogador() {
     
     var opcoesTexto = ""
     for(var atributo in cartaJogador.atributos){
-        opcoesTexto+=`<input type = 'radio' name='atributos' value='${atributo}' id='${atributo}'>
-        <label for = '${atributo}'> ${atributo}: ${cartaJogador.atributos[atributo]}</label><br>`;
+        opcoesTexto+=`<p><input type = 'radio' name='atributos' value='${atributo}' id='${atributo}' onclick="selecaoAtributo()">
+        <label for = '${atributo}'> ${atributo}: ${cartaJogador.atributos[atributo].toLocaleString("pt-br")}</label></p>`;
     }
    
     
@@ -35,7 +33,11 @@ function exibirCartaJogador() {
   
   function exibirCartaMaquina() {
     var divCartaMaquina = document.getElementById("carta-maquina");
-    divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`;
+    var pos = listaCartas.indexOf(cartaJogador);
+    listaCartas.splice(pos,1);
+    cartaMaquina = listaCartas[parseInt(Math.random()*3)];
+
+    divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.image})`;
     // divCartaJogador.style.backgroundImage = "url(" + cartaJogador.imagem + ")"
     var moldura =
       '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width: inherit; height: inherit; position: absolute;">';
@@ -49,7 +51,7 @@ function exibirCartaJogador() {
         "'>" +
         atributo +
         " " +
-        cartaMaquina.atributos[atributo] +
+        cartaMaquina.atributos[atributo].toLocaleString("pt-br") +
         "</p>";
     }
     var nome = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`;
@@ -58,36 +60,6 @@ function exibirCartaJogador() {
   }
     
    
-/*
-    var pos = listaCartas.indexOf(cartaSorteada);
-    listaCartas.splice(pos,1);
-    var cartaComputer = listaCartas[parseInt(Math.random()*3)];
-
-    listaCartasSorteadas.push(cartaSorteada);
-    listaCartasSorteadas.push(cartaComputer);
-    iniciarJogo()
-
-}*/
-
-/*
-function iniciarJogo(){
-
-    var selecaoAtributos = document.querySelector("div#opcoes");
-    var atributos = ["força","defesa","agilidade","energia"];
-
-    for(let i=0; i<4;i++){
-
-        selecaoAtributos.innerHTML+= ` <input type="radio" onclick="selecaoAtributo()" name="atributos" id="atributo${i}" value=${atributos[i]}>`;
-        selecaoAtributos.innerHTML+=`<label for="atributo${i}">${atributos[i]}</label>`;
-
-    }
-
-    
-
-    
-}*/
-
-/*
 function selecaoAtributo(){
 
     var btnRadio = document.getElementsByName("atributos");
@@ -111,25 +83,14 @@ function selecaoAtributo(){
 
 function jogar(){
 
-    resultado.innerHTML+=
-    
-        `<figure>
-            <img src="${listaCartasSorteadas[1].image}" alt="" srcset="">
 
-            <figcaption>${listaCartasSorteadas[1].nome}
-                <ul>
-                    <li>Força: ${listaCartasSorteadas[1].atributos['força']}</li>
-                    <li>Defesa: ${listaCartasSorteadas[1].atributos['defesa']}</li>
-                    <li>Agilidade: ${listaCartasSorteadas[1].atributos['agilidade']}</li>
-                    <li>Energia: ${listaCartasSorteadas[1].atributos['energia']}</li>
-        </ul>
-            </figcaption>
-        </figure>`;
+    exibirCartaMaquina();
 
-    var jogador = listaCartasSorteadas[0].atributos[atributoChecked];
-    var computer = listaCartasSorteadas[1].atributos[atributoChecked];
+    var jogador = cartaJogador.atributos[atributoChecked];
+    console.log(cartaMaquina);
+    var computer = cartaMaquina.atributos[atributoChecked];
 
-    var situacao = document.getElementById("situacao");
+    var situacao = document.getElementById("header-game");
 
     if(jogador>computer){
 
@@ -155,7 +116,7 @@ function jogar(){
 
 
 }
-*/
+
         
 //cartas
 
@@ -211,8 +172,8 @@ var listaCartasSorteadas = [
 ]
 
 
-var atributoChecked =""
+var atributoChecked ="";
 
-var cartaJogador = document.getElementById("carta-jogador");
+var cartaJogador = "";
 
-var cartaMaquina = document.getElementById("carta-maquina");
+var cartaMaquina = "";
