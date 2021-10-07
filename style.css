@@ -123,6 +123,12 @@ button.menu{
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
+.projetos p{
+  font-size: 18px;
+  font-weight: 700;
+  text-align: justify;
+}
+
 #complemento li{
   list-style: none;
   padding: 12px;

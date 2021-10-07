@@ -13,3 +13,17 @@ function calcular(){
     areaResultado.innerText = resultado + media;
     console.log(areaResultado.innerText);
 }
+
+function instrucoes(){
+    var divInstrucoes = document.getElementById("instrucoes");
+    divInstrucoes.innerHTML = `
+        <h2>Instruções</h2>
+        <p>Digite as notas nos campos correspontes em seguida clique em calcular para saber a média</p>`;
+    
+}
+
+function limparInstrucoes(){
+    var divInstrucoes = document.getElementById("instrucoes");
+    divInstrucoes.innerHTML = "";
+
+}
