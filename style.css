@@ -19,6 +19,10 @@ body {
   justify-content: space-between;
 }
 
+.cabecalho-analise{
+  text-align: center;
+}
+
 .perfil {
   display: flex;
 }
