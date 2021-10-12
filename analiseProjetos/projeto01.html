@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/_css/style.css">
     <title>Análise projeto 01</title>
 </head>
 <body>
@@ -24,52 +24,157 @@
                 principalmente na linguagem JavaScript e como ela interage com o documento HTML.
             </p>
 
-            <textarea name="" id=""  readonly cols="156" rows="75">
-                <body>
+                <div class="code"> 
+                <textarea name="" id=""  readonly cols="96" rows="20">
+                
+                    <form>
+                        <label for="n1">Nota 1: </label>
+                        <input type="number" value="0" id="n1" name="nota1" step="0,1">
 
-                    <div class="container">
-                        <h1 class="page-title">
-                            Calculadora de média</h1>
-                        <p class="page-subtitle">
-                            Descubra qual a sua média de nota de todas as provas!
-                        </p>
-                
-                        <div class="entrada">
-                            
-                            <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt="">
-                
-                            <form>
-                                <label for="n1">Nota 1: </label>
-                                <input type="number" value="0" id="n1" name="nota1" step="0,1">
+                        <label for="n2">Nota 2: </label>
+                        <input type="number" value="0" id="n2" name="nota2" step="0,1">
                     
-                                <label for="n2">Nota 2: </label>
-                                <input type="number" value="0" id="n2" name="nota2" step="0,1">
+                        <label for="n3">Nota 3: </label>
+                        <input type="number" value="0" id="n3" name="nota2" step="0,1">
                     
-                                <label for="n3">Nota 3: </label>
-                                <input type="number" value="0" id="n3" name="nota2" step="0,1">
+                        <label for="n4">Nota 4: </label>
+                        <input type="number" value="0" id="n4" name="nota4" step="0,1">
                     
-                                <label for="n4">Nota 4: </label>
-                                <input type="number" value="0" id="n4" name="nota4" step="0,1">
-                    
-                                <input type="button" id="button" value="Calcular" onclick="calcular()">
-                            </form>
+                        <input type="button" id="button" value="Calcular" onclick="calcular()">
+                    </form>
                               
-                        </div>
-                        
-                        <h2 id="media"></h2>
-                    </div>
+                </textarea>
+
+                <figure>
+                    <img src="/_images/inputAula01.png" alt="" srcset="">
+                    <figcaption>Figura 1 - layout de entrada das notas</figcaption>
+                </figure>
+
+                </div>
+
+                <div class="code">
+
+                    <pre id="estilo">
+                        <code>
+body {
+    font-family: 'Roboto Mono',monospace;
+    min-height: 400px;
+    background-image: url('https://image.flaticon.com/icons/png/512/201/201635.png');
+    background-color: #000000;
+    background-size: 80vh;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: auto;
+   }
+    
+  .container {
+    top: 50px;
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .container h2#media{
+    background-color: white;
+    width: 400px;
+    margin:  30px auto auto;
+
+  }
+  
+  .page-title {
+    color:#ffffff;
+    margin: 0 0 5px;
+  }
+  
+  .page-subtitle {
+    color:#ffffff;
+    margin-top: 5px;
+  }
+  
+  .page-logo {
+    width: 200px;
+  }
+
+
+  .alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  ul.home {
+    position: absolute;
+    list-style: none;
+    display: block;
+    top: 20px;
+  }
+
+  .home li{
+    display: inline-block;
+    background-color: aliceblue;
+    padding: 16px;
+    border-radius: 5px;
+  }
+
+  a{
+    color: black;
+    text-decoration: none;
+  
+  }
+
+  .entrada {
+
+    top: 190px;
+    left: 200px;
+  }
+
+
+  .entrada input{
+      width: 40px;
+      font-size: 14pt;
+      text-align: center;
+  }
+
+  #button {
+    margin-left: 40px;
+    width: 100px;
+    height: 40px;
+    background-color: #7ada7a;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    border-radius: 5px;
+    font-size: 12pt;
+    border: none;
+  }
+
+
+
+  .entrada label{
+      color: #ffffff;
+      font-size: 14pt;
+  }
+
+
+div#instrucoes{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  
+}
+
+div#instrucoes:hover{
+  padding: 16px;
+}                            
+
+                        </code>
+                    </pre>
+
+                </div>
                 
-                    <ul class="home">
-                        <li><a href="/index.html">INÍCIO</a> </li>
-                        <li onmousemove="instrucoes()" onmouseleave="limparInstrucoes()">INSTRUÇÕES</li>
-                    </ul>
-                    <a href="https://alura.com.br/" target="_blank">
-                    <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-                
-                    </a>
-                
-                </body>
-            </textarea>
         </main>
 
 

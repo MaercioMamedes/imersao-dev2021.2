@@ -23,6 +23,18 @@ body {
   text-align: center;
 }
 
+div.code{
+  display: flex;
+  justify-content: center;
+}
+
+pre#estilo{
+  background-color: white;
+  border:solid;
+  padding: 8px;
+ 
+}
+
 .perfil {
   display: flex;
 }
